@@ -4,15 +4,20 @@ project(YourProjectName)
 
 set(CMAKE_CXX_STANDARD 17)
 
+
+
 # Укажите исходные файлы вашего проекта
 set(SOURCES
     src/BackIndexRock.cpp
     src/main.cpp
     src/Baket.cpp
-    src/BTree.cpp
+#    src/BTree.cpp
     src/NER.cpp
-    src/Searcher.cpp
+#    src/Searcher.cpp
 )
+
+find_package(gflags CONFIG REQUIRED)
+
 
 
 # Включите модуль Fetch-content
@@ -49,7 +54,15 @@ endif()
 set(ROCKSDB_INCLUDE_DIRS "${CMAKE_BINARY_DIR}/_deps/rocksdb-src/include")
 set(ROCKSDB_LIBRARIES "${CMAKE_BINARY_DIR}/_deps/rocksdb-src")
 
+
+
+include_directories(./vcpkg/installed/x64-linux/include)
+link_directories(./vcpkg/installed/x64-linux/lib)
+
 find_package(Threads REQUIRED)
+
+
+
 
 # Создайте исполняемый файл
 add_executable(YourExecutableName ${SOURCES})
@@ -59,5 +72,7 @@ target_link_libraries(YourExecutableName
     ${ROCKSDB_LIBRARIES}/librocksdb.a  # Замените на фактический путь и имя библиотеки
     Threads::Threads
     sodium
+    nlohmann_json
+    gflags
 )
 
