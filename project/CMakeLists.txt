@@ -52,7 +52,7 @@ if(NOT rocksdb_POPULATED)
 endif()
 # Определите пути к собранной версии RocksDB
 set(ROCKSDB_INCLUDE_DIRS "${CMAKE_BINARY_DIR}/_deps/rocksdb-src/include")
-set(ROCKSDB_LIBRARIES "${CMAKE_BINARY_DIR}/_deps/rocksdb-src")
+set(ROCKSDB_LIBRARIES "${CMAKE_BINARY_DIR}/external/rocksdb-build")
 
 
 
