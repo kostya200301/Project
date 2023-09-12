@@ -14,6 +14,8 @@ cd vcpkg
 ./vcpkg install nlohmann-json
 ./vcpkg install gflags
 
+./vcpkg remove gflags
+
 cd ..
 
 
