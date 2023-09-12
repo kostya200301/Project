@@ -16,7 +16,7 @@ set(SOURCES
 #    src/Searcher.cpp
 )
 
-find_package(gflags CONFIG REQUIRED)
+# find_package(gflags CONFIG REQUIRED)
 
 
 
@@ -72,7 +72,7 @@ target_link_libraries(YourExecutableName
     ${ROCKSDB_LIBRARIES}/librocksdb.a  # Замените на фактический путь и имя библиотеки
     Threads::Threads
     sodium
-    nlohmann_json
-    gflags
+#    nlohmann_json
+#    gflags
 )
 
