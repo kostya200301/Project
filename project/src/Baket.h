@@ -10,7 +10,7 @@
 #include <rocksdb/db.h>
 #include <string>
 #include "Action.h"
-#include "BackIndex.h"
+#include "BackIndexRock.h"
 #include <vector>
 using json = nlohmann::json;
 
